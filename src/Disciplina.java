@@ -46,11 +46,14 @@ public class Disciplina {
     /*
      * Matricula um aluno na disciplina
      */
-    public void matricularAluno(Aluno aluno) {
+    public boolean matricularAluno(Aluno aluno) {
         // Tratamento para garantir que não pode
         // existir matrícula duplicada na disciplina
         if (!alunoEstaMatriculado(aluno.getMatricula())) {
-            alunos.put(aluno.getMatricula(), aluno);        }
+            alunos.put(aluno.getMatricula(), aluno);
+            return true;
+        }
+        return false;
     }
     
     /*
